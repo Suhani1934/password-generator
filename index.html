@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body>
+    <section class="h-screen bg-gray-300 flex justify-center items-center ">
+        <!-- wrapper -->
+        <div class="flex flex-col gap-6 border-4 border-black px-5 py-5 rounded-md bg-red-300 sm:w-[400px]">
+            <div class="flex gap-4 relative">
+                <p>Password is:</p>
+                <span id="outputScreen" class="w-[150px] bg-white border border-black pl-2"></span>
+                <button id="copybtn"><i data-feather="copy"></i></button>
+                <span id="copied" class="opacity-0 absolute bg-white right-[45px] top-[-35px] border border-black rounded-md px-1 py-1"></span>
+            </div>
+            
+
+            <div class="flex gap-2">
+                <p>Password length:</p>
+                <p id="rangedisplay"></p>
+            </div>
+            <input type="range" min="1" max="10" id="range" >
+
+            <div class="flex flex-col gap-2">
+                <span><input type="checkbox" id="up"><label for="up">Include Uppercase</label></span>
+                <span><input type="checkbox" id="lo"><label for="lo">Include Lowercase</label></span>
+                <span><input type="checkbox" id="nu"><label for="nu">Include Numbers</label></span>
+                <span><input type="checkbox" id="sy"><label for="sy">Include Symbols</label></span>
+            </div>
+            
+            <div class="flex gap-2 items-center">
+                Password Strength:
+                <div id="indicator" class="border border-black rounded-full h-[20px] w-[20px] bg-gray-300"></div>
+            </div>
+
+            
+
+            <button class="border-2 border-black bg-blue-300 rounded-md" id="button">Generate</button>
+
+        </div>
+    </section>
+    <script>
+        feather.replace();
+    </script>
+    <script src="password.js">
+    </script>
+</body>
+</html>
